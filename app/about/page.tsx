@@ -66,6 +66,54 @@ export default function AboutPage() {
             گفتگو با پشتیبانی
           </a>
         </section>
+
+        {/* FAQ Section */}
+        <section className="mx-auto flex w-full max-w-4xl flex-col items-center px-4 py-20">
+          <h2 className="text-main mb-12 text-3xl font-bold md:text-4xl">
+            سوالات{" "}
+            <span className="text-[var(--color-primary-neon)]">متداول</span>
+          </h2>
+
+          <div className="flex w-full flex-col gap-4 text-right">
+            <div className="glass-panel p-6">
+              <h3 className="text-main mb-2 font-bold">
+                اکانت چگونه تحویل داده می‌شود؟
+              </h3>
+              <p className="text-muted text-sm leading-relaxed">
+                پس از ثبت سفارش از طریق پشتیبانی تلگرام، اطلاعات اکانت در
+                سریع‌ترین زمان ممکن برای شما ارسال می‌شود.
+              </p>
+            </div>
+
+            <div className="glass-panel p-6">
+              <h3 className="text-main mb-2 font-bold">روش پرداخت چیست؟</h3>
+              <p className="text-muted text-sm leading-relaxed">
+                پرداخت به‌صورت کارت‌به‌کارت انجام می‌شود؛ شماره کارت را پس از
+                هماهنگی از طریق پشتیبانی تلگرام دریافت می‌کنید.
+              </p>
+            </div>
+
+            <div className="glass-panel p-6">
+              <h3 className="text-main mb-2 font-bold">
+                آیا دسترسی در طول مدت اشتراک قطع می‌شود؟
+              </h3>
+              <p className="text-muted text-sm leading-relaxed">
+                اکانت‌ها با IP های معتبر تنظیم می‌شوند تا دسترسی شما بدون قطعی
+                برقرار بماند.
+              </p>
+            </div>
+
+            <div className="glass-panel p-6">
+              <h3 className="text-main mb-2 font-bold">
+                قیمت پلن‌ها چقدر است؟
+              </h3>
+              <p className="text-muted text-sm leading-relaxed">
+                برای استعلام قیمت به‌روز هر پلن، از طریق پشتیبانی تلگرام با ما
+                در ارتباط باشید.
+              </p>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
