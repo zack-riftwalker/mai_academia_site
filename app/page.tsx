@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -30,98 +32,44 @@ export default function Home() {
           {/* Call to Action (CTA) Group */}
           <div className="relative z-10 flex flex-col gap-4 sm:flex-row">
             {/* Primary Button */}
-            <button className="neon-glow rounded-xl bg-[var(--color-primary-neon)] px-8 py-3 font-bold text-[#070B1A] transition-all hover:brightness-110">
+            <Link
+              href="/products"
+              className="neon-glow rounded-xl bg-[var(--color-primary-neon)] px-8 py-3 font-bold text-[#070B1A] transition-all hover:brightness-110"
+            >
               مشاهده محصولات
-            </button>
+            </Link>
 
             {/* Secondary Button */}
-            <button className="glass-panel text-main hover:neon-glow-secondary rounded-xl px-8 py-3 font-medium transition-all hover:text-[var(--color-secondary-neon)]">
+            <a
+              href="https://t.me/maiposhtibani"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-panel text-main hover:neon-glow-secondary rounded-xl px-8 py-3 font-medium transition-all hover:text-[var(--color-secondary-neon)]"
+            >
               پشتیبانی تلگرام
-            </button>
+            </a>
           </div>
         </section>
 
-        {/* Products Section */}
+        {/* Products Teaser Section */}
         <section
           id="products"
-          className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-20"
+          className="mx-auto flex w-full max-w-6xl flex-col items-center px-4 py-20 text-center"
         >
-          <h2 className="text-main mb-12 text-3xl font-bold md:text-4xl">
+          <h2 className="text-main mb-4 text-3xl font-bold md:text-4xl">
             پلن‌های{" "}
             <span className="text-[var(--color-primary-neon)]">جمینای پرو</span>
           </h2>
-
-          <div className="grid w-full max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-            {/* Card 1: Gemini Pro (1 Year) */}
-            <article className="glass-panel relative flex h-full flex-col overflow-hidden p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(17,216,255,0.15)]">
-              <h3 className="text-main mb-2 text-2xl font-bold">
-                اکانت یک‌ساله
-              </h3>
-              <p className="text-muted mb-6 text-sm">
-                دسترسی پایدار برای استفاده شخصی
-              </p>
-
-              <ul className="mb-8 flex-grow space-y-4">
-                <li className="text-main flex items-center text-sm before:ml-3 before:font-bold before:text-[var(--color-primary-neon)] before:content-['✓']">
-                  دسترسی نامحدود به Gemini Advanced
-                </li>
-                <li className="text-main flex items-center text-sm before:ml-3 before:font-bold before:text-[var(--color-primary-neon)] before:content-['✓']">
-                  بدون قطعی و تحریم
-                </li>
-                <li className="text-main flex items-center text-sm before:ml-3 before:font-bold before:text-[var(--color-primary-neon)] before:content-['✓']">
-                  تحویل فوری و تضمینی
-                </li>
-                <li className="text-main flex items-center text-sm before:ml-3 before:font-bold before:text-[var(--color-primary-neon)] before:content-['✓']">
-                  پشتیبانی اختصاصی
-                </li>
-              </ul>
-
-              <div className="mb-6 text-xl font-bold text-[var(--color-primary-neon)]">
-                قیمت: استعلام
-              </div>
-
-              <button className="mt-auto w-full rounded-xl border border-[var(--color-primary-neon)] py-3 font-bold text-[var(--color-primary-neon)] transition-colors hover:bg-[var(--color-primary-neon)] hover:text-[#070B1A]">
-                سفارش و دریافت شماره کارت
-              </button>
-            </article>
-
-            {/* Card 2: Gemini Pro (18 Months) */}
-            <article className="glass-panel relative flex h-full flex-col overflow-hidden p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(17,216,255,0.15)]">
-              <div className="absolute top-0 right-0 rounded-bl-xl bg-[var(--color-secondary-neon)] px-3 py-1 text-xs font-bold text-[#070B1A]">
-                پیشنهاد ویژه
-              </div>
-
-              <h3 className="text-main mb-2 text-2xl font-bold">
-                اکانت ۱۸ ماهه (اقتصادی)
-              </h3>
-              <p className="text-muted mb-6 text-sm">
-                بهترین انتخاب برای برنامه‌نویسان و تیم‌ها
-              </p>
-
-              <ul className="mb-8 flex-grow space-y-4">
-                <li className="text-main flex items-center text-sm before:ml-3 before:font-bold before:text-[var(--color-primary-neon)] before:content-['✓']">
-                  دسترسی نامحدود به Gemini Advanced
-                </li>
-                <li className="text-main flex items-center text-sm before:ml-3 before:font-bold before:text-[var(--color-primary-neon)] before:content-['✓']">
-                  بدون قطعی و تحریم
-                </li>
-                <li className="text-main flex items-center text-sm before:ml-3 before:font-bold before:text-[var(--color-primary-neon)] before:content-['✓']">
-                  تحویل فوری و تضمینی
-                </li>
-                <li className="text-main flex items-center text-sm before:ml-3 before:font-bold before:text-[var(--color-primary-neon)] before:content-['✓']">
-                  پشتیبانی اختصاصی
-                </li>
-              </ul>
-
-              <div className="mb-6 text-xl font-bold text-[var(--color-primary-neon)]">
-                قیمت: استعلام
-              </div>
-
-              <button className="neon-glow mt-auto w-full rounded-xl bg-[var(--color-primary-neon)] py-3 font-bold text-[#070B1A] transition-colors hover:opacity-90">
-                سفارش و دریافت شماره کارت
-              </button>
-            </article>
-          </div>
+          <p className="text-muted mb-8 max-w-2xl leading-relaxed">
+            اکانت یک‌ساله و اکانت ۱۸ ماهه‌ی اقتصادی، با دسترسی نامحدود به Gemini
+            Advanced و تحویل فوری.
+          </p>
+          <Link
+            href="/products"
+            className="rounded-xl border border-[var(--color-primary-neon)] px-8 py-3 font-bold text-[var(--color-primary-neon)] transition-colors hover:bg-[var(--color-primary-neon)] hover:text-[#070B1A]"
+          >
+            مشاهده همه‌ی پلن‌ها
+          </Link>
         </section>
 
         {/* Features Section */}
@@ -214,34 +162,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Minimal Footer */}
-      <footer className="mt-20 w-full border-t border-[var(--color-primary-neon)]/20 bg-[var(--color-surface)]/30 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 md:flex-row">
-          <div className="text-muted text-sm">
-            © 2026 آکادمی مایا. تمامی حقوق محفوظ است.
-          </div>
-          <a
-            href="#"
-            className="text-main flex items-center gap-2 text-sm transition-colors hover:text-[var(--color-primary-neon)]"
-          >
-            <svg
-              className="h-5 w-5 text-[var(--color-primary-neon)]"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-              />
-            </svg>
-            پشتیبانی تلگرام
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

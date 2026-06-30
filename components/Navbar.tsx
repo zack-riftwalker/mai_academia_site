@@ -35,9 +35,14 @@ export default function Navbar() {
 
         {/* Action Button */}
         <div className="flex items-center">
-          <button className="hover:neon-glow-secondary rounded-lg border border-[var(--color-primary-neon)]/40 px-6 py-2.5 transition-all duration-300">
+          <a
+            href="https://t.me/maiposhtibani"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:neon-glow-secondary rounded-lg border border-[var(--color-primary-neon)]/40 px-6 py-2.5 transition-all duration-300"
+          >
             پشتیبانی
-          </button>
+          </a>
         </div>
       </div>
     </header>
