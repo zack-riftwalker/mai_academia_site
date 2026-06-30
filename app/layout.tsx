@@ -33,6 +33,17 @@ const estedad = localFont({
 export const metadata: Metadata = {
   title: "Maya Academy | آکادمی مایا",
   description: "مرجع پریمیوم اکانت‌ها و ابزارهای هوش مصنوعی",
+  openGraph: {
+    title: "Maya Academy | آکادمی مایا",
+    description: "مرجع پریمیوم اکانت‌ها و ابزارهای هوش مصنوعی",
+    locale: "fa_IR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Maya Academy | آکادمی مایا",
+    description: "مرجع پریمیوم اکانت‌ها و ابزارهای هوش مصنوعی",
+  },
 };
 
 export default function RootLayout({

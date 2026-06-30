@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #070B1A;
-  --color-surface: #0F1629;
-  --color-primary-neon: #11D8FF;
-  --color-secondary-neon: #8D6CFF;
-  --color-main: #FFFFFF;
-  --color-muted: #94A3B8;
+  --color-background: #070b1a;
+  --color-surface: #0f1629;
+  --color-primary-neon: #11d8ff;
+  --color-secondary-neon: #8d6cff;
+  --color-main: #ffffff;
+  --color-muted: #94a3b8;
 
   --font-sans: var(--font-estedad), ui-sans-serif, system-ui, sans-serif;
 }
@@ -29,20 +29,24 @@ body {
     background-color: color-mix(in srgb, var(--color-surface) 75%, transparent);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid color-mix(in srgb, var(--color-primary-neon) 20%, transparent);
+    border: 1px solid
+      color-mix(in srgb, var(--color-primary-neon) 20%, transparent);
     border-radius: 16px;
     transition: all 0.3s ease;
   }
 
   .neon-glow {
-    box-shadow: 0 4px 20px -2px color-mix(in srgb, var(--color-primary-neon) 40%, transparent);
+    box-shadow: 0 4px 20px -2px
+      color-mix(in srgb, var(--color-primary-neon) 40%, transparent);
   }
 
   .neon-glow-secondary {
-    box-shadow: 0 4px 20px -2px color-mix(in srgb, var(--color-secondary-neon) 40%, transparent);
+    box-shadow: 0 4px 20px -2px
+      color-mix(in srgb, var(--color-secondary-neon) 40%, transparent);
   }
 
   .text-glow {
-    text-shadow: 0 0 12px color-mix(in srgb, var(--color-primary-neon) 60%, transparent);
+    text-shadow: 0 0 12px
+      color-mix(in srgb, var(--color-primary-neon) 60%, transparent);
   }
 }
