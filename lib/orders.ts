@@ -65,19 +65,36 @@ export async function createOrder(
   return { error: "ثبت سفارش با خطا مواجه شد. لطفاً دوباره تلاش کنید." };
 }
 
+const VALID_STATUSES: OrderStatus[] = [
+  "pending",
+  "paid",
+  "delivered",
+  "cancelled",
+];
+
 export async function updateOrderStatus(orderId: string, status: OrderStatus) {
   await assertAdmin();
 
-  await supabaseAdmin
+  const { error } = await supabaseAdmin
     .from("orders")
     .update({ status, updated_at: new Date().toISOString() })
     .eq("id", orderId);
 
+  if (error) {
+    throw new Error(`Failed to update order status: ${error.message}`);
+  }
+
   revalidatePath("/admin");
+  redirect("/admin");
 }
 
 export async function updateOrderStatusAction(formData: FormData) {
   const orderId = String(formData.get("orderId") ?? "");
-  const status = String(formData.get("status") ?? "") as OrderStatus;
-  await updateOrderStatus(orderId, status);
+  const status = String(formData.get("status") ?? "");
+
+  if (!orderId || !VALID_STATUSES.includes(status as OrderStatus)) {
+    throw new Error("Invalid order status update request");
+  }
+
+  await updateOrderStatus(orderId, status as OrderStatus);
 }
