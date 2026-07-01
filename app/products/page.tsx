@@ -36,11 +36,13 @@ export default function ProductsPage() {
               title="اکانت یک‌ساله"
               subtitle="دسترسی پایدار برای استفاده شخصی"
               features={sharedFeatures}
+              plan="1-year"
             />
             <ProductCard
               title="اکانت ۱۸ ماهه (اقتصادی)"
               subtitle="بهترین انتخاب برای برنامه‌نویسان و تیم‌ها"
               features={sharedFeatures}
+              plan="18-month"
               badge="پیشنهاد ویژه"
               highlighted
             />

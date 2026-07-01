@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 type ProductCardProps = {
   title: string;
   subtitle: string;
   features: string[];
+  plan: "1-year" | "18-month";
   highlighted?: boolean;
   badge?: string;
 };
@@ -10,6 +13,7 @@ export default function ProductCard({
   title,
   subtitle,
   features,
+  plan,
   highlighted = false,
   badge,
 }: ProductCardProps) {
@@ -39,10 +43,8 @@ export default function ProductCard({
         قیمت: استعلام
       </div>
 
-      <a
-        href="https://t.me/maiposhtibani"
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link
+        href={`/order?plan=${plan}`}
         className={
           highlighted
             ? "neon-glow mt-auto w-full rounded-xl bg-[var(--color-primary-neon)] py-3 text-center font-bold text-[#070B1A] transition-colors hover:opacity-90"
@@ -50,7 +52,7 @@ export default function ProductCard({
         }
       >
         سفارش و دریافت شماره کارت
-      </a>
+      </Link>
     </article>
   );
 }
