@@ -1,7 +1,18 @@
 "use server";
 
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 import { supabaseAdmin } from "@/lib/supabase/server";
+import type { OrderStatus } from "@/lib/supabase/types";
+
+async function assertAdmin() {
+  const cookieStore = await cookies();
+  const session = cookieStore.get("admin_session")?.value;
+  if (!session || session !== process.env.ADMIN_PASSWORD) {
+    throw new Error("Unauthorized");
+  }
+}
 
 export type OrderFormState = {
   error?: string;
@@ -52,4 +63,21 @@ export async function createOrder(
   }
 
   return { error: "ثبت سفارش با خطا مواجه شد. لطفاً دوباره تلاش کنید." };
+}
+
+export async function updateOrderStatus(orderId: string, status: OrderStatus) {
+  await assertAdmin();
+
+  await supabaseAdmin
+    .from("orders")
+    .update({ status, updated_at: new Date().toISOString() })
+    .eq("id", orderId);
+
+  revalidatePath("/admin");
+}
+
+export async function updateOrderStatusAction(formData: FormData) {
+  const orderId = String(formData.get("orderId") ?? "");
+  const status = String(formData.get("status") ?? "") as OrderStatus;
+  await updateOrderStatus(orderId, status);
 }

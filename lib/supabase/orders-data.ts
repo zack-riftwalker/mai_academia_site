@@ -20,3 +20,12 @@ export async function getOrderByNumber(orderNumber: string) {
 export function planLabel(plan: OrderPlan) {
   return PLAN_LABELS[plan];
 }
+
+export async function getAllOrders() {
+  const { data } = await supabaseAdmin
+    .from("orders")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+  return data ?? [];
+}
